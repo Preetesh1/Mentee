@@ -118,6 +118,42 @@ npm run dev
 
 ---
 
+### 📌 Features
+
+- 🔐 User Registration and Login
+- 👥 Role-based access control (Admin, Mentor, Mentee)
+- 📝 Create, Read, Update, and Delete Notes
+- 🌐 CORS & Security Middleware
+- 📄 Static file serving and HTML views
+- 🧩 Modular codebase for easy scaling
+- 🧪 Environment-based configuration
+
+---
+
+### 📡 API Endpoints Overview
+
+#### 👤 User Routes (`/users`)
+| Method | Endpoint         | Description               |
+|--------|------------------|---------------------------|
+| GET    | `/users`         | Get all users (Admin only)|
+| POST   | `/users`         | Register a new user       |
+
+#### 📝 Notes Routes (`/notes`)
+| Method | Endpoint         | Description               |
+|--------|------------------|---------------------------|
+| GET    | `/notes`         | Get all notes             |
+| POST   | `/notes`         | Create a new note         |
+| PATCH  | `/notes`         | Update an existing note   |
+| DELETE | `/notes`         | Delete a note             |
+
+#### 🏠 Root Routes (`/`)
+| Method | Endpoint         | Description               |
+|--------|------------------|---------------------------|
+| GET    | `/`              | Root route — serves index |
+| GET    | `/*`             | Handles 404 via HTML page |
+
+---
+
 > 🚫 **Important Notice**
 >
 > This project is publicly visible **only for demonstration and resume purposes**.
