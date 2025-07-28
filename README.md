@@ -1,4 +1,4 @@
-# menteeweb
+![MENTEE Banner](./assets/banner.PNG)
 
 # 💡 MENTEE Backend – Powering Connections, One API at a Time
 
