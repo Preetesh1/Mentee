@@ -99,6 +99,23 @@ git clone https://github.com/yourusername/MENTEE-Backend.git
 cd MENTEE-Backend
 ```
 
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+Create a .env file in the root directory and add:
+```bash
+PORT=3500
+MONGO_URI=your_mongodb_connection_string
+```
+### 4. Start the server
+```bash
+npm run dev
+```
+**The server will start on `http://localhost:3500`**
+
 ---
 
 > 🚫 **Important Notice**
