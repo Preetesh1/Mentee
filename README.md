@@ -35,5 +35,7 @@ Built with 💚 **Node.js + Express + MongoDB**, this server does all the heavy 
 
 ---
 
-## 📁 Folder Structure
-
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
