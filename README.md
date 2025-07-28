@@ -97,6 +97,9 @@ To run this project locally, follow these steps:
 ```bash
 git clone https://github.com/yourusername/MENTEE-Backend.git
 cd MENTEE-Backend
+```
+
+---
 
 > 🚫 **Important Notice**
 >
