@@ -3,14 +3,6 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)
 
-> 🚫 **Important Notice**
->
-> This project is publicly visible **only for demonstration and resume purposes**.
-> All rights are reserved by the author. **Unauthorized use, reproduction, or distribution of this code is strictly prohibited.**
-> Please do not copy, fork, or reuse this code for commercial or educational purposes without explicit permission.
->
-> 🛡️ Project by Preetesh Sharma | All Rights Reserved
-
 <p align="center">
   <img src="./assets/banner.PNG" alt="MENTEE Logo" width="400"/>
 </p>
@@ -105,3 +97,11 @@ To run this project locally, follow these steps:
 ```bash
 git clone https://github.com/yourusername/MENTEE-Backend.git
 cd MENTEE-Backend
+
+> 🚫 **Important Notice**
+>
+> This project is publicly visible **only for demonstration and resume purposes**.
+> All rights are reserved by the author. **Unauthorized use, reproduction, or distribution of this code is strictly prohibited.**
+> Please do not copy, fork, or reuse this code for commercial or educational purposes without explicit permission.
+>
+> 🛡️ Project by Preetesh Sharma | All Rights Reserved
