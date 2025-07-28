@@ -1,7 +1,10 @@
+#### ✅ Do this:
+```md
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)
+
 
 > 🚫 **Important Notice**
 >
@@ -92,3 +95,15 @@ MENTEE-Backend/
 ├── package.json                 # Project metadata and dependencies
 ├── package-lock.json            # Dependency lock file
 └── server.js                    # Main server entry point
+
+---
+
+## ⚙️ Getting Started
+
+To run this project locally, follow these steps:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/MENTEE-Backend.git
+cd MENTEE-Backend
