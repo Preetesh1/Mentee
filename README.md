@@ -1,3 +1,11 @@
+> 🚫 **Important Notice**
+>
+> This project is publicly visible **only for demonstration and resume purposes**.
+> All rights are reserved by the author. **Unauthorized use, reproduction, or distribution of this code is strictly prohibited.**
+> Please do not copy, fork, or reuse this code for commercial or educational purposes without explicit permission.
+>
+> 🛡️ Project by Preetesh Sharma | All Rights Reserved
+
 <p align="center">
   <img src="./assets/banner.PNG" alt="MENTEE Logo" width="400"/>
 </p>
@@ -40,4 +48,4 @@ Built with 💚 **Node.js + Express + MongoDB**, this server does all the heavy 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)
