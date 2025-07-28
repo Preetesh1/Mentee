@@ -55,7 +55,7 @@ Built with 💚 **Node.js + Express + MongoDB**, this server does all the heavy 
 
 ### 📁 Project Structure
 
-```
+```bash
 MENTEE-Backend/
 │
 ├── assets/                      # Project assets (e.g. banner image)
@@ -95,8 +95,9 @@ MENTEE-Backend/
 ├── package.json                 # Project metadata and dependencies
 ├── package-lock.json            # Dependency lock file
 └── server.js                    # Main server entry point
+```
 
----
+--- 
 
 ## ⚙️ Getting Started
 
