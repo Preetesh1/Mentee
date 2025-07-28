@@ -1,4 +1,6 @@
-![MENTEE Banner](./assets/banner.PNG)
+<p align="center">
+  <img src="./assets/banner.PNG" alt="MENTEE Logo" width="400"/>
+</p>
 
 # 💡 MENTEE Backend – Powering Connections, One API at a Time
 
