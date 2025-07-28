@@ -45,35 +45,45 @@ Built with 💚 **Node.js + Express + MongoDB**, this server does all the heavy 
 
 ---
 
-assets
-banner.PNG
-backend
-config
-allowedOrigins.js
-corOptions.js
-dbConn.js
-controllers
-notesController.js
-usersController.js
-middleware
-errorHandler.js
-logger.js
-models
-Note.js
-User.js
-public/css
-style.css
-routes
-notesRoutes.js
-root.js
-userRoutes.js
-views
-404.html
-index.html
-package-lock.json
-package.json
-server.js
-.gitignore
+MENTEE-Backend/
+│
+├── assets/                      # Project assets (e.g. banner image)
+│   └── banner.PNG
+│
+├── config/                      # Configuration files
+│   ├── allowedOrigins.js
+│   ├── corOptions.js
+│   └── dbConn.js
+│
+├── controllers/                 # Handles route logic
+│   ├── notesController.js
+│   └── usersController.js
+│
+├── middleware/                  # Custom middleware (e.g., error handling, logging)
+│   ├── errorHandler.js
+│   └── logger.js
+│
+├── models/                      # Mongoose schemas for MongoDB
+│   ├── Note.js
+│   └── User.js
+│
+├── public/                      # Static assets
+│   └── css/
+│       └── style.css
+│
+├── routes/                      # API route definitions
+│   ├── notesRoutes.js
+│   ├── root.js
+│   └── userRoutes.js
+│
+├── views/                       # HTML pages for public routes
+│   ├── 404.html
+│   └── index.html
+│
+├── .env                         # Environment variables (not committed)
+├── package.json                 # Project metadata and dependencies
+├── package-lock.json            # Dependency lock file
+└── server.js                    # Main server entry point
 
 ---
 
