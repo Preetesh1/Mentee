@@ -49,7 +49,7 @@ app.use(errorHandler)
 // Start server once MongoDB is connected
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB')
-    app.listen(PORT, () => console.log(`🚀 MENTEE Backend running on port ${PORT}`))
+    app.listen(PORT, () => console.log(`MENTEE Backend running on port ${PORT}`))
 })
 
 mongoose.connection.on('error', err => {
