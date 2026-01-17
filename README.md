@@ -52,11 +52,11 @@ MENTEE-Backend/
 │
 ├── config/                      # Configuration files
 │   ├── allowedOrigins.js
-│   ├── corOptions.js
+│   ├── corsOptions.js
 │   └── dbConn.js
 │
 ├── controllers/                 # Handles route logic
-│   ├── notesController.js
+│   ├── mentorshipController.js
 │   └── usersController.js
 │
 ├── middleware/                  # Custom middleware (e.g., error handling, logging)
@@ -64,7 +64,7 @@ MENTEE-Backend/
 │   └── logger.js
 │
 ├── models/                      # Mongoose schemas for MongoDB
-│   ├── Note.js
+│   ├── Mentorshiprequest.js
 │   └── User.js
 │
 ├── public/                      # Static assets
@@ -72,7 +72,7 @@ MENTEE-Backend/
 │       └── style.css
 │
 ├── routes/                      # API route definitions
-│   ├── notesRoutes.js
+│   ├── MentorshipRoutes.js
 │   ├── root.js
 │   └── userRoutes.js
 │
