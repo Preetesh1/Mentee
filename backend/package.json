@@ -1,7 +1,7 @@
 {
-  "name": "menteeweb",
+  "name": "mentee-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend API for MENTEE - A mentorship platform connecting students with alumni and professionals",
   "main": "server.js",
   "scripts": {
     "start": "node server",
@@ -9,15 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Preetesh1/menteeweb.git"
+    "url": "git+https://github.com/yourusername/MENTEE-Backend.git"
   },
-  "keywords": [],
+  "keywords": [
+    "mentorship",
+    "education",
+    "student",
+    "alumni",
+    "career-guidance"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Preetesh1/menteeweb/issues"
+    "url": "https://github.com/yourusername/MENTEE-Backend/issues"
   },
-  "homepage": "https://github.com/Preetesh1/menteeweb#readme",
+  "homepage": "https://github.com/yourusername/MENTEE-Backend#readme",
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
@@ -30,7 +36,6 @@
     "express": "^4.21.2",
     "express-async-handler": "^1.2.0",
     "mongoose": "^8.16.5",
-    "mongoose-sequence": "^6.0.1",
     "uuid": "^11.1.0"
   }
 }
