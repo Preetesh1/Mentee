@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 3500
 
 console.log(process.env.NODE_ENV)
 
+console.log('Current directory:', __dirname)
+console.log('Files in current directory:', require('fs').readdirSync(__dirname))
+console.log('Files in routes:', require('fs').readdirSync(__dirname + '/routes'))
+
 // Connect to MongoDB
 connectDB()
 
