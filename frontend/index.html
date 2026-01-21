@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MENTEE - Complete Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>MENTEE - Premium Mentorship Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,130 +13,175 @@
         }
 
         :root {
-            /* Dark Theme */
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --bg-tertiary: #1a1a1a;
-            --bg-elevated: #222222;
+            /* Your Custom Colors */
+            --burgundy: #510000;
+            --burgundy-dark: #3d0000;
+            --burgundy-light: #6b0000;
+            --beige: #e2baa7;
+            --beige-light: #f0d4c4;
+            --beige-dark: #d4a894;
             
-            /* Text */
-            --text-primary: #ffffff;
-            --text-secondary: #a3a3a3;
-            --text-tertiary: #737373;
+            /* Extended Palette */
+            --cream: #faf6f3;
+            --cream-dark: #f5ede7;
             
-            /* Accent */
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --accent-light: #60a5fa;
+            /* Neutrals */
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
             
-            /* Status */
-            --success: #10b981;
-            --warning: #f59e0b;
-            --error: #ef4444;
+            /* Status Colors */
+            --success: #059669;
+            --success-light: #10b981;
+            --warning: #d97706;
+            --error: #dc2626;
             
-            /* Border */
-            --border: #262626;
-            --border-light: #333333;
+            /* Gradients */
+            --gradient-burgundy: linear-gradient(135deg, #510000 0%, #6b0000 100%);
+            --gradient-beige: linear-gradient(135deg, #e2baa7 0%, #d4a894 100%);
+            --gradient-warm: linear-gradient(135deg, #510000 0%, #8b0000 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(81, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(81, 0, 0, 0.08), 0 2px 4px -2px rgba(81, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(81, 0, 0, 0.1), 0 4px 6px -4px rgba(81, 0, 0, 0.08);
+            --shadow-lg: 0 20px 25px -5px rgba(81, 0, 0, 0.12), 0 8px 10px -6px rgba(81, 0, 0, 0.08);
+            --shadow-xl: 0 25px 50px -12px rgba(81, 0, 0, 0.25);
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--gray-900);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Navbar */
         .navbar {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(81, 0, 0, 0.08);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(81, 0, 0, 0.03);
+            display: none;
         }
 
-        .nav-container {
-            max-width: 1280px;
+        .navbar.visible {
+            display: block;
+        }
+
+        .navbar-container {
+            max-width: 1320px;
             margin: 0 auto;
-            padding: 0 32px;
-            height: 64px;
+            padding: 0 40px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            height: 76px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 14px;
             text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
-        .logo-mark {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            border-radius: 8px;
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gradient-burgundy);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-primary);
+            color: white;
             font-weight: 800;
-            font-size: 0.875rem;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            font-size: 1.25rem;
+            box-shadow: 0 6px 16px rgba(81, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            box-shadow: 0 10px 24px rgba(81, 0, 0, 0.35);
+            transform: scale(1.05) rotate(-3deg);
         }
 
         .logo-text {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
+            font-size: 1.375rem;
+            font-weight: 800;
+            background: var(--gradient-burgundy);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2px;
+            gap: 6px;
+            align-items: center;
         }
 
         .nav-link {
-            padding: 8px 16px;
-            color: var(--text-secondary);
+            color: var(--gray-600);
             text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border-radius: 6px;
-            transition: all 0.2s;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
         }
 
         .nav-link:hover {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
+            color: var(--burgundy);
+            background: rgba(81, 0, 0, 0.05);
         }
 
         .nav-link.active {
-            background: var(--text-primary);
-            color: var(--bg-primary);
+            color: var(--burgundy);
+            background: rgba(226, 186, 167, 0.15);
         }
 
         .user-menu {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .user-name {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--burgundy);
         }
 
         /* Hero */
         .hero {
-            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            padding: 100px 32px;
-            text-align: center;
+            background: var(--gradient-warm);
+            padding: 160px 40px 180px;
             position: relative;
             overflow: hidden;
         }
@@ -148,489 +193,137 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(226, 186, 167, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(226, 186, 167, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        .hero-container {
-            max-width: 800px;
+        .hero-content {
+            max-width: 1100px;
             margin: 0 auto;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--text-primary);
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 20px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: rgba(226, 186, 167, 0.15);
+            border: 1px solid rgba(226, 186, 167, 0.25);
+            border-radius: 100px;
+            color: var(--beige-light);
+            font-size: 0.9375rem;
+            font-weight: 700;
+            margin-bottom: 36px;
+            backdrop-filter: blur(10px);
+            letter-spacing: 0.5px;
         }
 
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--accent-light) 0%, #a78bfa 100%);
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 32px;
+            letter-spacing: -2.5px;
+            line-height: 1.08;
+        }
+
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, var(--beige-light) 0%, var(--beige) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 32px;
+        .hero-description {
+            font-size: 1.375rem;
+            color: rgba(226, 186, 167, 0.95);
+            margin-bottom: 52px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
-        .hero-actions {
+        .hero-cta {
             display: flex;
-            gap: 12px;
+            gap: 18px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            font-size: 0.9375rem;
-            font-weight: 600;
-            border-radius: 8px;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 38px;
+            font-size: 1.0625rem;
+            font-weight: 700;
+            border-radius: 14px;
             border: none;
             cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
             font-family: inherit;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.3px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            color: var(--text-primary);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            background: var(--gradient-beige);
+            color: var(--burgundy);
+            box-shadow: 0 6px 20px rgba(226, 186, 167, 0.35);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(226, 186, 167, 0.5);
         }
 
         .btn-secondary {
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-            border: 1px solid var(--border-light);
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            border: 2px solid rgba(226, 186, 167, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: var(--bg-tertiary);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: var(--beige-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--burgundy);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
         }
 
         .btn-danger {
             background: var(--error);
-            color: var(--text-primary);
-        }
-
-        .btn-danger:hover {
-            background: #dc2626;
+            color: white;
         }
 
         .btn-success {
             background: var(--success);
-            color: var(--text-primary);
+            color: white;
         }
 
-        .btn-success:hover {
-            background: #059669;
-        }
-
-        /* Section */
-        .section {
-            padding: 80px 32px;
-        }
-
-        .section-dark {
-            background: var(--bg-secondary);
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            max-width: 640px;
-            margin: 0 auto 64px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 1px var(--accent), 0 10px 15px -3px rgba(0, 0, 0, 0.7);
-            transform: translateY(-4px);
-        }
-
-        /* Mentor Cards */
-        .mentor-header {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            font-weight: 700;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
-        }
-
-        .mentor-info h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .mentor-info p {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-        }
-
-        .mentor-bio {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 6px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            color: var(--accent-light);
-        }
-
-        /* Search */
-        .search-wrapper {
-            max-width: 600px;
-            margin: 0 auto 48px;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 14px 16px 14px 44px;
-            border: 1px solid var(--border-light);
-            border-radius: 10px;
-            font-size: 0.9375rem;
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .search-input::placeholder {
-            color: var(--text-tertiary);
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-tertiary);
-        }
-
-        /* Modal */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 200;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            max-width: 540px;
-            width: calc(100% - 32px);
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 32px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .modal-close {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-        }
-
-        .modal-close:hover {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-        }
-
-        /* Forms */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-
-        .form-input,
-        .form-textarea,
-        .form-select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            font-size: 0.9375rem;
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: var(--text-tertiary);
-        }
-
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 4px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 32px;
-        }
-
-        .tab {
-            padding: 12px 20px;
-            border: none;
-            background: none;
-            font-size: 0.9375rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
-            margin-bottom: -1px;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .tab:hover {
-            color: var(--text-primary);
-        }
-
-        .tab.active {
-            color: var(--accent-light);
-            border-bottom-color: var(--accent);
-        }
-
-        /* Badges */
-        .badge {
-            display: inline-flex;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .badge-pending {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.2);
-            color: #fbbf24;
-        }
-
-        .badge-accepted {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: #34d399;
-        }
-
-        .badge-rejected {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            color: #f87171;
-        }
-
-        .badge-completed {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            color: var(--accent-light);
-        }
-
-        /* Alert */
-        .alert {
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: none;
-        }
-
-        .alert.active {
-            display: block;
-        }
-
-        .alert-success {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: #34d399;
-        }
-
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            color: #f87171;
-        }
-
-        /* Auth Pages */
-        .auth-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 32px;
-        }
-
-        .auth-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 48px;
-            max-width: 480px;
-            width: 100%;
-        }
-
-        .auth-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .auth-subtitle {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .auth-link {
-            color: var(--accent-light);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .auth-link:hover {
-            text-decoration: underline;
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         /* Loading */
@@ -638,7 +331,7 @@
             display: inline-block;
             width: 16px;
             height: 16px;
-            border: 2px solid var(--text-primary);
+            border: 2px solid currentColor;
             border-top-color: transparent;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
@@ -648,7 +341,557 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Page transitions */
+        /* Sections */
+        .section {
+            padding: 120px 40px;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-cream {
+            background: var(--cream);
+        }
+
+        .section-beige {
+            background: linear-gradient(180deg, var(--cream) 0%, rgba(226, 186, 167, 0.08) 100%);
+        }
+
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            padding: 8px 20px;
+            background: rgba(81, 0, 0, 0.06);
+            border: 1px solid rgba(81, 0, 0, 0.12);
+            border-radius: 100px;
+            color: var(--burgundy);
+            font-size: 0.875rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--burgundy);
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            font-size: 1.3125rem;
+            color: var(--gray-600);
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto 72px;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 20px 28px 20px 60px;
+            border: 2px solid rgba(81, 0, 0, 0.1);
+            border-radius: 16px;
+            font-size: 1.0625rem;
+            background: white;
+            color: var(--gray-900);
+            font-family: inherit;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(81, 0, 0, 0.04);
+            font-weight: 500;
+        }
+
+        .search-input::placeholder {
+            color: var(--gray-400);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--burgundy);
+            box-shadow: 0 0 0 4px rgba(81, 0, 0, 0.08);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+        }
+
+        /* Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 36px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(81, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(81, 0, 0, 0.06);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-burgundy);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px rgba(81, 0, 0, 0.15);
+            border-color: rgba(226, 186, 167, 0.3);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Mentor Cards */
+        .mentor-card-header {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            background: var(--gradient-burgundy);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.25rem;
+            font-weight: 900;
+            box-shadow: 0 10px 28px rgba(81, 0, 0, 0.25);
+            flex-shrink: 0;
+            transition: all 0.4s;
+        }
+
+        .card:hover .avatar {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 16px 40px rgba(81, 0, 0, 0.35);
+        }
+
+        .mentor-info {
+            flex: 1;
+        }
+
+        .mentor-name {
+            font-size: 1.625rem;
+            font-weight: 800;
+            color: var(--burgundy);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .mentor-role {
+            font-size: 1.0625rem;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+
+        .mentor-bio {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            background: rgba(226, 186, 167, 0.12);
+            color: var(--burgundy);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(226, 186, 167, 0.2);
+        }
+
+        .badge-primary {
+            background: rgba(81, 0, 0, 0.08);
+            color: var(--burgundy);
+            border-color: rgba(81, 0, 0, 0.15);
+        }
+
+        .badge-success {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--success);
+            border-color: rgba(5, 150, 105, 0.2);
+        }
+
+        .badge-pending {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--warning);
+            border-color: rgba(217, 119, 6, 0.2);
+        }
+
+        .badge-accepted {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--success);
+            border-color: rgba(5, 150, 105, 0.2);
+        }
+
+        .badge-rejected {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--error);
+            border-color: rgba(220, 38, 38, 0.2);
+        }
+
+        .badge-completed {
+            background: rgba(81, 0, 0, 0.08);
+            color: var(--burgundy);
+            border-color: rgba(81, 0, 0, 0.15);
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(81, 0, 0, 0.12);
+        }
+
+        .tags {
+            margin-bottom: 32px;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            text-align: center;
+            padding: 48px 36px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 28px;
+            background: var(--gradient-burgundy);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 28px rgba(81, 0, 0, 0.25);
+            transition: all 0.4s;
+        }
+
+        .card:hover .feature-icon {
+            transform: scale(1.15) rotate(8deg);
+        }
+
+        .feature-title {
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--burgundy);
+            margin-bottom: 14px;
+            letter-spacing: -0.3px;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.75;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(81, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 28px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 28px;
+            padding: 48px;
+            max-width: 640px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 32px 80px rgba(81, 0, 0, 0.4);
+            border: 1px solid rgba(226, 186, 167, 0.2);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 36px;
+            padding-bottom: 28px;
+            border-bottom: 2px solid rgba(81, 0, 0, 0.08);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--burgundy);
+            letter-spacing: -0.5px;
+        }
+
+        .modal-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(81, 0, 0, 0.06);
+            border: none;
+            color: var(--burgundy);
+            cursor: pointer;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(81, 0, 0, 0.12);
+            transform: rotate(90deg);
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 32px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--burgundy);
+            letter-spacing: 0.2px;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid rgba(81, 0, 0, 0.1);
+            border-radius: 14px;
+            font-size: 1.0625rem;
+            background: var(--cream);
+            color: var(--gray-900);
+            font-family: inherit;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--burgundy);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(81, 0, 0, 0.08);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+            line-height: 1.7;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 48px;
+            border-bottom: 3px solid rgba(81, 0, 0, 0.08);
+        }
+
+        .tab {
+            padding: 16px 28px;
+            background: transparent;
+            border: none;
+            border-bottom: 4px solid transparent;
+            color: var(--gray-500);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            margin-bottom: -3px;
+        }
+
+        .tab:hover {
+            color: var(--burgundy);
+            background: rgba(81, 0, 0, 0.03);
+        }
+
+        .tab.active {
+            color: var(--burgundy);
+            border-bottom-color: var(--burgundy);
+        }
+
+        /* Alert */
+        .alert {
+            padding: 18px 24px;
+            border-radius: 14px;
+            margin-bottom: 28px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: none;
+        }
+
+        .alert.active {
+            display: block;
+        }
+
+        .alert-success {
+            background: rgba(5, 150, 105, 0.1);
+            border: 2px solid rgba(5, 150, 105, 0.2);
+            color: var(--success);
+        }
+
+        .alert-error {
+            background: rgba(220, 38, 38, 0.1);
+            border: 2px solid rgba(220, 38, 38, 0.2);
+            color: var(--error);
+        }
+
+        /* Auth Pages */
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: var(--gradient-warm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(226, 186, 167, 0.12) 0%, transparent 50%);
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: 28px;
+            padding: 56px;
+            max-width: 540px;
+            width: 100%;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .auth-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--burgundy);
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .auth-subtitle {
+            font-size: 1.0625rem;
+            color: var(--gray-600);
+        }
+
+        .auth-link {
+            color: var(--burgundy);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .auth-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Request Actions */
+        .request-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .mentor-response {
+            padding: 24px;
+            background: rgba(226, 186, 167, 0.08);
+            border-radius: 16px;
+            border-left: 5px solid var(--burgundy);
+            margin-top: 24px;
+        }
+
+        .response-label {
+            font-size: 0.875rem;
+            font-weight: 800;
+            color: var(--burgundy);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .response-text {
+            color: var(--gray-700);
+            line-height: 1.75;
+            font-size: 1.0625rem;
+            font-weight: 500;
+        }
+
+        /* Page */
         .page {
             display: none;
         }
@@ -657,59 +900,35 @@
             display: block;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .section-title { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; }
-            .section { padding: 60px 20px; }
-            .hero { padding: 60px 20px; }
-            .nav-container { padding: 0 20px; }
-            .auth-card { padding: 32px; }
-        }
-
         /* Hidden */
         .hidden {
             display: none !important;
         }
 
-        /* Request Actions */
-        .request-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.25rem; }
+            .section-title { font-size: 2.5rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .section { padding: 90px 28px; }
+            .hero { padding: 120px 28px 140px; }
+            .navbar-container { padding: 0 24px; }
+            .nav-link { padding: 8px 14px; font-size: 0.875rem; }
+            .auth-card { padding: 36px; }
         }
 
-        .mentor-response {
-            padding: 16px;
-            background: var(--bg-tertiary);
-            border-left: 3px solid var(--accent);
-            border-radius: 8px;
-            margin-top: 16px;
-        }
-
-        .response-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent-light);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-        }
-
-        .response-text {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
+        ::selection {
+            background: var(--beige);
+            color: var(--burgundy);
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar" id="mainNav" style="display: none;">
-        <div class="nav-container">
-            <a href="#" class="logo" onclick="showPage('home')">
-                <div class="logo-mark">M</div>
+    <nav class="navbar" id="mainNav">
+        <div class="navbar-container">
+            <a class="logo" onclick="showPage('home')">
+                <div class="logo-icon">M</div>
                 <span class="logo-text">MENTEE</span>
             </a>
             <div class="nav-links" id="navLinks">
@@ -720,7 +939,7 @@
             </div>
             <div class="user-menu">
                 <span class="user-name" id="userName"></span>
-                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+                <button class="btn btn-white" style="padding: 10px 24px; font-size: 0.9375rem;" onclick="logout()">Logout</button>
             </div>
         </div>
     </nav>
@@ -729,12 +948,14 @@
     <div id="loginPage" class="page active">
         <div class="auth-container">
             <div class="auth-card">
-                <div class="logo" style="justify-content: center; margin-bottom: 32px;">
-                    <div class="logo-mark">M</div>
-                    <span class="logo-text">MENTEE</span>
+                <div class="auth-header">
+                    <div class="logo" style="justify-content: center; margin-bottom: 32px;">
+                        <div class="logo-icon">M</div>
+                        <span class="logo-text">MENTEE</span>
+                    </div>
+                    <h1 class="auth-title">Welcome Back</h1>
+                    <p class="auth-subtitle">Sign in to continue your mentorship journey</p>
                 </div>
-                <h1 class="auth-title">Welcome Back</h1>
-                <p class="auth-subtitle">Sign in to continue your mentorship journey</p>
                 
                 <div id="loginAlert" class="alert"></div>
 
@@ -747,13 +968,13 @@
                         <label class="form-label">Password</label>
                         <input type="password" class="form-input" id="loginPassword" placeholder="••••••••" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;" id="loginBtn">
-                        Sign In
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 20px;" id="loginBtn">
+                        <span>Sign In</span>
                     </button>
                 </form>
                 
-                <p style="text-align: center; color: var(--text-secondary); font-size: 0.875rem;">
-                    Don't have an account? <a href="#" class="auth-link" onclick="showPage('register')">Sign up</a>
+                <p style="text-align: center; color: var(--gray-600); font-size: 1rem;">
+                    Don't have an account? <a href="#" class="auth-link" onclick="showPage('registerPage')">Sign up</a>
                 </p>
             </div>
         </div>
@@ -763,12 +984,14 @@
     <div id="registerPage" class="page">
         <div class="auth-container">
             <div class="auth-card">
-                <div class="logo" style="justify-content: center; margin-bottom: 32px;">
-                    <div class="logo-mark">M</div>
-                    <span class="logo-text">MENTEE</span>
+                <div class="auth-header">
+                    <div class="logo" style="justify-content: center; margin-bottom: 32px;">
+                        <div class="logo-icon">M</div>
+                        <span class="logo-text">MENTEE</span>
+                    </div>
+                    <h1 class="auth-title">Create Account</h1>
+                    <p class="auth-subtitle">Join our mentorship community</p>
                 </div>
-                <h1 class="auth-title">Create Account</h1>
-                <p class="auth-subtitle">Join our mentorship community</p>
                 
                 <div id="registerAlert" class="alert"></div>
 
@@ -793,12 +1016,12 @@
                             <option value="Mentor">Mentor (Providing guidance)</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;" id="registerBtn">
-                        Create Account
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 20px;" id="registerBtn">
+                        <span>Create Account</span>
                     </button>
                 </form>
                 
-                <p style="text-align: center; color: var(--text-secondary); font-size: 0.875rem;">
+                <p style="text-align: center; color: var(--gray-600); font-size: 1rem;">
                     Already have an account? <a href="#" class="auth-link" onclick="showPage('loginPage')">Sign in</a>
                 </p>
             </div>
@@ -808,15 +1031,23 @@
     <!-- Home Page -->
     <div id="home" class="page">
         <section class="hero">
-            <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    TRUSTED BY 10,000+ STUDENTS
+                </div>
                 <h1 class="hero-title">
-                    Connect with <span class="hero-gradient">Expert</span> Mentors
+                    Connect with <span class="gradient-text">World-Class</span> Mentors
                 </h1>
-                <p class="hero-subtitle">Get personalized guidance from industry leaders. Transform your career with expert mentorship.</p>
-                <div class="hero-actions">
+                <p class="hero-description">
+                    Get personalized guidance from industry leaders and alumni. Transform your career with expert mentorship.
+                </p>
+                <div class="hero-cta">
                     <button class="btn btn-primary" onclick="showPage('mentors')">
-                        Browse Mentors
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <span>Browse Mentors</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -825,27 +1056,33 @@
             </div>
         </section>
 
-        <section class="section section-dark">
+        <section class="section section-white">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Why Choose MENTEE</h2>
-                    <p class="section-subtitle">Everything you need to succeed in your career</p>
+                    <span class="section-badge">WHY CHOOSE US</span>
+                    <h2 class="section-title">Everything You Need to Succeed</h2>
+                    <p class="section-subtitle">
+                        Access world-class mentorship from professionals at top companies
+                    </p>
                 </div>
-                <div class="grid">
-                    <div class="card">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🎯</div>
-                        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Expert Guidance</h3>
-                        <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">Connect with mentors from top companies worldwide</p>
+
+                <div class="grid-3">
+                    <div class="card feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Expert Mentors</h3>
+                        <p class="feature-desc">Connect with professionals from Google, Amazon, Microsoft</p>
                     </div>
-                    <div class="card">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">⚡</div>
-                        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Fast Matching</h3>
-                        <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">Get matched with the perfect mentor for your goals</p>
+
+                    <div class="card feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Fast Matching</h3>
+                        <p class="feature-desc">Get matched with your perfect mentor based on goals</p>
                     </div>
-                    <div class="card">
-                        <div style="font-size: 2.5rem; margin-bottom: 16px;">💼</div>
-                        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Career Growth</h3>
-                        <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">Accelerate your career with personalized advice</p>
+
+                    <div class="card feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h3 class="feature-title">Career Growth</h3>
+                        <p class="feature-desc">Accelerate your career with personalized advice</p>
                     </div>
                 </div>
             </div>
@@ -854,23 +1091,28 @@
 
     <!-- Mentors Page -->
     <div id="mentors" class="page">
-        <section class="section">
+        <section class="section section-beige">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Find Your Mentor</h2>
-                    <p class="section-subtitle">Browse our community of experienced professionals</p>
+                    <span class="section-badge">OUR MENTORS</span>
+                    <h2 class="section-title">Find Your Perfect Mentor</h2>
+                    <p class="section-subtitle">
+                        Browse through our community of experienced professionals
+                    </p>
                 </div>
 
-                <div class="search-wrapper">
-                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                    <input type="text" class="search-input" id="mentorSearch" placeholder="Search mentors..." oninput="filterMentors()">
+                <div class="search-container">
+                    <div class="search-wrapper">
+                        <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" class="search-input" id="mentorSearch" placeholder="Search by name, company, or expertise..." oninput="filterMentors()">
+                    </div>
                 </div>
 
-                <div class="grid" id="mentorsList">
-                    <!-- Mentors will be loaded here -->
+                <div class="grid-3" id="mentorsList">
+                    <!-- Mentors loaded here -->
                 </div>
             </div>
         </section>
@@ -878,11 +1120,13 @@
 
     <!-- Requests Page -->
     <div id="requests" class="page">
-        <section class="section">
-            <div class="container" style="max-width: 900px">
+        <section class="section section-white">
+            <div class="container" style="max-width: 950px;">
                 <div class="section-header">
                     <h2 class="section-title">My Requests</h2>
-                    <p class="section-subtitle">Manage your mentorship requests</p>
+                    <p class="section-subtitle">
+                        Manage and track all your mentorship requests
+                    </p>
                 </div>
 
                 <div class="tabs">
@@ -893,7 +1137,7 @@
                 </div>
 
                 <div id="requestsList">
-                    <!-- Requests will be loaded here -->
+                    <!-- Requests loaded here -->
                 </div>
             </div>
         </section>
@@ -901,24 +1145,24 @@
 
     <!-- Profile Page -->
     <div id="profile" class="page">
-        <section class="section">
-            <div class="container" style="max-width: 900px">
+        <section class="section section-cream">
+            <div class="container" style="max-width: 950px;">
                 <div class="card">
-                    <div style="display: flex; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid var(--border); margin-bottom: 32px;">
-                        <div class="avatar" id="profileAvatar" style="width: 80px; height: 80px; font-size: 2.5rem;">A</div>
+                    <div style="display: flex; gap: 28px; padding-bottom: 36px; border-bottom: 3px solid rgba(81, 0, 0, 0.08); margin-bottom: 40px;">
+                        <div class="avatar" id="profileAvatar" style="width: 100px; height: 100px; font-size: 2.75rem;">A</div>
                         <div style="flex: 1;">
-                            <h1 style="font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;" id="profileName">Loading...</h1>
-                            <span class="tag" id="profileRole">Mentee</span>
+                            <h2 id="profileName" style="font-size: 2.5rem; font-weight: 900; color: var(--burgundy); margin-bottom: 14px; letter-spacing: -1px;">Loading...</h2>
+                            <span class="badge badge-primary" id="profileRole" style="font-size: 0.9375rem; padding: 10px 20px;">Mentee</span>
                         </div>
                     </div>
 
                     <div id="profileContent">
-                        <!-- Profile content will be loaded here -->
+                        <!-- Profile content loaded here -->
                     </div>
 
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--border);">
-                        <button class="btn btn-primary" onclick="showEditProfile()">Edit Profile</button>
-                        <button class="btn btn-secondary" onclick="showChangePassword()">Change Password</button>
+                    <div style="display: flex; gap: 16px; padding-top: 36px; border-top: 3px solid rgba(81, 0, 0, 0.08); flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="showEditProfile()"><span>Edit Profile</span></button>
+                        <button class="btn btn-white" onclick="showChangePassword()"><span>Change Password</span></button>
                     </div>
                 </div>
             </div>
@@ -945,40 +1189,37 @@
                     <div class="form-group">
                         <label class="form-label">Areas of Help</label>
                         <div class="tags" id="helpAreasSelect">
-                            <span class="tag" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Career Guidance">Career Guidance</span>
-                            <span class="tag" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Interview Preparation">Interview Prep</span>
-                            <span class="tag" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Skill Development">Skill Development</span>
-                            <span class="tag" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Academic Help">Academic Help</span>
+                            <span class="badge" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Career Guidance">Career Guidance</span>
+                            <span class="badge" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Interview Preparation">Interview Prep</span>
+                            <span class="badge" style="cursor: pointer;" onclick="toggleHelpArea(this)" data-value="Skill Development">Skill Development</span>
                         </div>
                     </div>
                     <input type="hidden" id="selectedMentorId">
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="requestSubmitBtn">Send Request</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="requestSubmitBtn"><span>Send Request</span></button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Response Modal (For Mentors) -->
+    <!-- Response Modal -->
     <div id="responseModal" class="modal-overlay" onclick="closeModal('responseModal')">
         <div class="modal" onclick="event.stopPropagation()">
             <div class="modal-header">
                 <h2 class="modal-title">Respond to Request</h2>
                 <button class="modal-close" onclick="closeModal('responseModal')">×</button>
             </div>
-            <div id="responseModalContent">
-                <form id="responseForm" onsubmit="handleRespondRequest(event)">
-                    <div class="form-group">
-                        <label class="form-label">Your Response</label>
-                        <textarea class="form-textarea" id="mentorResponseText" placeholder="Share your thoughts and availability..." required></textarea>
-                    </div>
-                    <input type="hidden" id="responseRequestId">
-                    <div style="display: flex; gap: 12px;">
-                        <button type="submit" class="btn btn-success" style="flex: 1;" onclick="document.getElementById('responseAction').value='Accepted'">Accept</button>
-                        <button type="button" class="btn btn-danger" style="flex: 1;" onclick="rejectRequest()">Reject</button>
-                    </div>
-                    <input type="hidden" id="responseAction" value="Accepted">
-                </form>
-            </div>
+            <form id="responseForm" onsubmit="handleRespondRequest(event)">
+                <div class="form-group">
+                    <label class="form-label">Your Response</label>
+                    <textarea class="form-textarea" id="mentorResponseText" placeholder="Share your thoughts..." required></textarea>
+                </div>
+                <input type="hidden" id="responseRequestId">
+                <input type="hidden" id="responseAction" value="Accepted">
+                <div style="display: flex; gap: 12px;">
+                    <button type="submit" class="btn btn-success" style="flex: 1;" onclick="document.getElementById('responseAction').value='Accepted'"><span>Accept</span></button>
+                    <button type="button" class="btn btn-danger" style="flex: 1;" onclick="rejectRequest()"><span>Reject</span></button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -990,10 +1231,8 @@
                 <button class="modal-close" onclick="closeModal('editProfileModal')">×</button>
             </div>
             <form id="editProfileForm" onsubmit="handleEditProfile(event)">
-                <div id="editProfileContent">
-                    <!-- Profile fields will be loaded here -->
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" id="editProfileBtn">Save Changes</button>
+                <div id="editProfileContent"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="editProfileBtn"><span>Save Changes</span></button>
             </form>
         </div>
     </div>
@@ -1019,14 +1258,14 @@
                     <label class="form-label">Confirm New Password</label>
                     <input type="password" class="form-input" id="confirmPassword" minlength="6" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" id="changePasswordBtn">Update Password</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="changePasswordBtn"><span>Update Password</span></button>
             </form>
         </div>
     </div>
 
     <script>
-        // Configuration
-        const API_URL = 'https://mentee-b5b2.onrender.com';
+        // ⚠️ CHANGE THIS TO YOUR RENDER BACKEND URL!
+        const API_URL = 'https://YOUR-BACKEND-URL.onrender.com';
         
         // Global state
         let currentUser = null;
@@ -1035,7 +1274,7 @@
         let selectedHelpAreas = [];
         let currentFilter = 'all';
 
-        // Initialize app
+        // Initialize
         function init() {
             const user = localStorage.getItem('menteeUser');
             if (user) {
@@ -1080,7 +1319,7 @@
                 showAlert(alert, 'Connection error. Please try again.', 'error');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = 'Sign In';
+                btn.innerHTML = '<span>Sign In</span>';
             }
         }
 
@@ -1120,7 +1359,7 @@
                 showAlert(alert, 'Connection error. Please try again.', 'error');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = 'Create Account';
+                btn.innerHTML = '<span>Create Account</span>';
             }
         }
 
@@ -1128,16 +1367,16 @@
             localStorage.removeItem('menteeUser');
             currentUser = null;
             showPage('loginPage');
-            document.getElementById('mainNav').style.display = 'none';
+            document.getElementById('mainNav').classList.remove('visible');
         }
 
         function showAuthenticatedUI() {
-            document.getElementById('mainNav').style.display = 'block';
+            document.getElementById('mainNav').classList.add('visible');
             document.getElementById('userName').textContent = currentUser.username;
             showPage('home');
         }
 
-        // Load user data
+        // Load data
         async function loadUserData() {
             await loadMentors();
             await loadRequests();
@@ -1160,7 +1399,7 @@
             const container = document.getElementById('mentorsList');
             
             if (mentors.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No mentors found</p>';
+                container.innerHTML = '<p style="text-align: center; color: var(--gray-600); font-size: 1.125rem;">No mentors found</p>';
                 return;
             }
             
@@ -1171,19 +1410,19 @@
                 
                 return `
                     <div class="card">
-                        <div class="mentor-header">
+                        <div class="mentor-card-header">
                             <div class="avatar">${initial}</div>
                             <div class="mentor-info">
-                                <h3>${profile.fullName || mentor.username}</h3>
-                                <p>${profile.position || 'Mentor'} ${profile.company ? 'at ' + profile.company : ''}</p>
+                                <h3 class="mentor-name">${profile.fullName || mentor.username}</h3>
+                                <div class="mentor-role">${profile.position || 'Mentor'} ${profile.company ? 'at ' + profile.company : ''}</div>
                             </div>
                         </div>
                         <p class="mentor-bio">${profile.bio || 'Experienced professional ready to help you grow.'}</p>
                         <div class="tags">
-                            ${expertise.slice(0, 3).map(skill => `<span class="tag">${skill}</span>`).join('')}
+                            ${expertise.slice(0, 3).map(skill => `<span class="badge badge-primary">${skill}</span>`).join('')}
                         </div>
                         ${currentUser.role === 'Mentee' ? `
-                            <button class="btn btn-primary" style="width: 100%" onclick="openRequestModal('${mentor._id}', '${profile.fullName || mentor.username}')">Request Mentorship</button>
+                            <button class="btn btn-primary" style="width: 100%" onclick="openRequestModal('${mentor._id}', '${profile.fullName || mentor.username}')"><span>Request Mentorship</span></button>
                         ` : ''}
                     </div>
                 `;
@@ -1220,7 +1459,7 @@
                 : requests.filter(r => r.status === currentFilter);
             
             if (filtered.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No requests found</p>';
+                container.innerHTML = '<p style="text-align: center; color: var(--gray-600); font-size: 1.125rem;">No requests found</p>';
                 return;
             }
             
@@ -1230,18 +1469,19 @@
                 const otherProfile = otherUser.profile || {};
                 
                 return `
-                    <div class="card" style="margin-bottom: 20px;">
-                        <h3 style="font-size: 1.125rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px;">${request.subject}</h3>
-                        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px">
+                    <div class="card" style="margin-bottom: 28px;">
+                        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 14px; letter-spacing: -0.3px;">${request.subject}</h3>
+                        <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 14px;">
                             <span class="badge badge-${request.status.toLowerCase()}">${request.status}</span>
-                            <span style="font-size: 0.875rem; color: var(--text-tertiary)">${new Date(request.createdAt).toLocaleDateString()}</span>
+                            <span style="font-size: 0.9375rem; color: var(--gray-500); font-weight: 600;">${new Date(request.createdAt).toLocaleDateString()}</span>
                         </div>
-                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 12px;">
-                            ${isMentor ? 'From' : 'To'}: <strong style="color: var(--text-primary)">${otherProfile.fullName || otherUser.username}</strong>
-                        </p>
-                        <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">${request.message}</p>
+                        <div style="margin-bottom: 18px;">
+                            <span style="color: var(--gray-500); font-weight: 600;">${isMentor ? 'From' : 'To'}:</span>
+                            <span style="color: var(--burgundy); font-weight: 700; margin-left: 10px;">${otherProfile.fullName || otherUser.username}</span>
+                        </div>
+                        <p style="color: var(--gray-600); margin-bottom: 24px; line-height: 1.75; font-size: 1.0625rem;">${request.message}</p>
                         <div class="tags">
-                            ${request.helpWith.map(area => `<span class="tag">${area}</span>`).join('')}
+                            ${request.helpWith.map(area => `<span class="badge">${area}</span>`).join('')}
                         </div>
                         
                         ${request.mentorResponse ? `
@@ -1253,20 +1493,20 @@
                         
                         ${isMentor && request.status === 'Pending' ? `
                             <div class="request-actions">
-                                <button class="btn btn-success" onclick="openResponseModal('${request._id}')">Respond</button>
-                                <button class="btn btn-danger" onclick="deleteRequest('${request._id}')">Delete</button>
+                                <button class="btn btn-success" onclick="openResponseModal('${request._id}')"><span>Respond</span></button>
+                                <button class="btn btn-danger" onclick="deleteRequest('${request._id}')"><span>Delete</span></button>
                             </div>
                         ` : ''}
                         
                         ${!isMentor && request.status === 'Pending' ? `
                             <div class="request-actions">
-                                <button class="btn btn-danger" onclick="deleteRequest('${request._id}')">Cancel Request</button>
+                                <button class="btn btn-danger" onclick="deleteRequest('${request._id}')"><span>Cancel Request</span></button>
                             </div>
                         ` : ''}
                         
                         ${request.status === 'Accepted' && isMentor ? `
                             <div class="request-actions">
-                                <button class="btn btn-primary" onclick="completeRequest('${request._id}')">Mark as Completed</button>
+                                <button class="btn btn-primary" onclick="completeRequest('${request._id}')"><span>Mark as Completed</span></button>
                             </div>
                         ` : ''}
                     </div>
@@ -1287,8 +1527,8 @@
             selectedHelpAreas = [];
             document.getElementById('requestSubject').value = '';
             document.getElementById('requestMessage').value = '';
-            document.querySelectorAll('#helpAreasSelect .tag').forEach(tag => {
-                tag.style.background = 'rgba(59, 130, 246, 0.1)';
+            document.querySelectorAll('#helpAreasSelect .badge').forEach(tag => {
+                tag.style.background = 'rgba(226, 186, 167, 0.12)';
             });
             openModal('requestModal');
         }
@@ -1297,10 +1537,10 @@
             const value = element.dataset.value;
             if (selectedHelpAreas.includes(value)) {
                 selectedHelpAreas = selectedHelpAreas.filter(a => a !== value);
-                element.style.background = 'rgba(59, 130, 246, 0.1)';
+                element.style.background = 'rgba(226, 186, 167, 0.12)';
             } else {
                 selectedHelpAreas.push(value);
-                element.style.background = 'rgba(59, 130, 246, 0.25)';
+                element.style.background = 'rgba(81, 0, 0, 0.15)';
             }
         }
 
@@ -1337,11 +1577,11 @@
                 alert('Connection error. Please try again.');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = 'Send Request';
+                btn.innerHTML = '<span>Send Request</span>';
             }
         }
 
-        // Respond to Request (Mentor)
+        // Respond to Request
         function openResponseModal(requestId) {
             document.getElementById('responseRequestId').value = requestId;
             document.getElementById('mentorResponseText').value = '';
@@ -1440,68 +1680,68 @@
             
             if (user.role === 'Mentee') {
                 content.innerHTML = `
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">Basic Information</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 28px; letter-spacing: -0.3px;">Basic Information</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
                             <div>
-                                <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px;">Email</div>
-                                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">${user.email}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Email</div>
+                                <div style="color: var(--burgundy); font-size: 1.125rem; font-weight: 700;">${user.email}</div>
                             </div>
                             <div>
-                                <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px;">College</div>
-                                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">${profile.college || 'Not set'}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">College</div>
+                                <div style="color: var(--burgundy); font-size: 1.125rem; font-weight: 700;">${profile.college || 'Not set'}</div>
                             </div>
                             <div>
-                                <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px;">Year</div>
-                                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">${profile.year || 'Not set'}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Year</div>
+                                <div style="color: var(--burgundy); font-size: 1.125rem; font-weight: 700;">${profile.year || 'Not set'}</div>
                             </div>
                         </div>
                     </div>
                     ${profile.bio ? `
-                        <div style="margin-bottom: 32px;">
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">About Me</h3>
-                            <p style="color: var(--text-secondary); line-height: 1.6;">${profile.bio}</p>
+                        <div style="margin-bottom: 40px;">
+                            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 18px; letter-spacing: -0.3px;">About Me</h3>
+                            <p style="color: var(--gray-600); line-height: 1.8; font-size: 1.125rem;">${profile.bio}</p>
                         </div>
                     ` : ''}
                     ${profile.skills && profile.skills.length > 0 ? `
-                        <div style="margin-bottom: 32px;">
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">Skills</h3>
+                        <div style="margin-bottom: 40px;">
+                            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 28px; letter-spacing: -0.3px;">Skills</h3>
                             <div class="tags">
-                                ${profile.skills.map(skill => `<span class="tag">${skill}</span>`).join('')}
+                                ${profile.skills.map(skill => `<span class="badge badge-primary">${skill}</span>`).join('')}
                             </div>
                         </div>
                     ` : ''}
                 `;
             } else {
                 content.innerHTML = `
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">Professional Information</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 28px; letter-spacing: -0.3px;">Professional Information</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
                             <div>
-                                <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px;">Email</div>
-                                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">${user.email}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Email</div>
+                                <div style="color: var(--burgundy); font-size: 1.125rem; font-weight: 700;">${user.email}</div>
                             </div>
                             <div>
-                                <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px;">Company</div>
-                                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">${profile.company || 'Not set'}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Company</div>
+                                <div style="color: var(--burgundy); font-size: 1.125rem; font-weight: 700;">${profile.company || 'Not set'}</div>
                             </div>
                             <div>
-                                <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px;">Position</div>
-                                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">${profile.position || 'Not set'}</div>
+                                <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Position</div>
+                                <div style="color: var(--burgundy); font-size: 1.125rem; font-weight: 700;">${profile.position || 'Not set'}</div>
                             </div>
                         </div>
                     </div>
                     ${profile.bio ? `
-                        <div style="margin-bottom: 32px;">
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">About Me</h3>
-                            <p style="color: var(--text-secondary); line-height: 1.6;">${profile.bio}</p>
+                        <div style="margin-bottom: 40px;">
+                            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 18px; letter-spacing: -0.3px;">About Me</h3>
+                            <p style="color: var(--gray-600); line-height: 1.8; font-size: 1.125rem;">${profile.bio}</p>
                         </div>
                     ` : ''}
                     ${profile.expertise && profile.expertise.length > 0 ? `
-                        <div style="margin-bottom: 32px;">
-                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">Expertise</h3>
+                        <div style="margin-bottom: 40px;">
+                            <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--burgundy); margin-bottom: 28px; letter-spacing: -0.3px;">Expertise</h3>
                             <div class="tags">
-                                ${profile.expertise.map(skill => `<span class="tag">${skill}</span>`).join('')}
+                                ${profile.expertise.map(skill => `<span class="badge badge-primary">${skill}</span>`).join('')}
                             </div>
                         </div>
                     ` : ''}
@@ -1563,8 +1803,8 @@
                         <input type="text" class="form-input" id="editExpertise" value="${(profile.expertise || []).join(', ')}">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">
-                            <input type="checkbox" id="editAvailability" ${profile.availability ? 'checked' : ''} style="width: auto; margin-right: 8px;">
+                        <label class="form-label" style="display: flex; align-items: center; gap: 12px;">
+                            <input type="checkbox" id="editAvailability" ${profile.availability ? 'checked' : ''} style="width: auto; margin: 0;">
                             Available for mentoring
                         </label>
                     </div>
@@ -1619,7 +1859,7 @@
                 alert('Connection error. Please try again.');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = 'Save Changes';
+                btn.innerHTML = '<span>Save Changes</span>';
             }
         }
 
@@ -1670,7 +1910,7 @@
                 showAlert(alert, 'Connection error. Please try again.', 'error');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = 'Update Password';
+                btn.innerHTML = '<span>Update Password</span>';
             }
         }
 
@@ -1703,7 +1943,7 @@
             }, 5000);
         }
 
-        // Initialize on load
+        // Initialize
         init();
     </script>
 </body>
