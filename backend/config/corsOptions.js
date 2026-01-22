@@ -13,5 +13,3 @@ const corsOptions = {
 }
 
 module.exports = corsOptions
-
-'https://mentee-frontend1.vercel.app'
