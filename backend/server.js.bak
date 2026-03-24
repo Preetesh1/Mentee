@@ -1,7 +1,4 @@
 require('dotenv').config()
-const http = require('http')
-const { Server } = require('socket.io')
-const socketHandler = require('./socket/socketHandler')
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -14,15 +11,6 @@ const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
 const { logEvents } = require('./middleware/logger')
 const PORT = process.env.PORT || 3500
-const server = http.createServer(app)
-const io = new Server(server, {
-  cors: {
-    origin: require('./config/allowedOrigins'),
-    methods: ['GET', 'POST'],
-    credentials: true,
-  },
-})
-socketHandler(io)
 
 console.log(process.env.NODE_ENV)
 
@@ -46,7 +34,6 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 app.use('/', require('./routes/root'))
 app.use('/users', require('./routes/userRoutes'))
 app.use('/mentorship', require('./routes/MentorshipRoutes'))
-app.use('/messages', require('./routes/messageRoutes'))
 
 // 404 Handler
 app.all('*', (req, res) => {
@@ -66,7 +53,7 @@ app.use(errorHandler)
 // Start server once MongoDB is connected
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB')
-    server.listen(PORT, () => console.log(`MENTEE Backend running on port ${PORT}`))
+    app.listen(PORT, () => console.log(`MENTEE Backend running on port ${PORT}`))
 })
 
 mongoose.connection.on('error', err => {
