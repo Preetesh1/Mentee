@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import logo from "./assets/logo-icon.png";
 
 // ─── Color Palette ───────────────────────────────────────────────────────────
 // Cream: #FAF7F0, #F5EFE0, #EDE4CC
@@ -9,16 +10,22 @@ const COLORS = {
   cream1: "#FAF7F0",
   cream2: "#F5EFE0",
   cream3: "#EDE4CC",
-  green1: "#D4E8D0",
-  green2: "#A8C5A0",
-  green3: "#7BAF72",
-  green4: "#5A9651",
-  green5: "#3D7A34",
-  deepGreen: "#2C5F28",
+
+  // Replace ALL greens with black shades
+  green1: "#F5F5F5",   // light background
+  green2: "#E0E0E0",
+  green3: "#BDBDBD",
+  green4: "#424242",   // medium dark
+  green5: "#000000",   // primary black
+
+  deepGreen: "#000000", // main headings → black
+
   brown: "#8B7355",
-  text: "#2A2A2A",
-  textMuted: "#6B6B5A",
+
+  text: "#1A1A1A",
+  textMuted: "#6B6B6B",
   white: "#FFFFFF",
+
   error: "#C0392B",
   warning: "#D4873A",
 };
@@ -56,7 +63,7 @@ const globalStyles = `
 
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: ${COLORS.cream2}; }
-  ::-webkit-scrollbar-thumb { background: ${COLORS.green2}; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb { background: #BDBDBD; } border-radius: 3px; }
 
   .serif { font-family: 'DM Serif Display', serif; }
 
@@ -134,7 +141,7 @@ const Btn = ({ children, variant = "primary", onClick, style = {}, disabled, sma
     opacity: disabled ? 0.6 : 1,
   };
   const variants = {
-    primary: { background: COLORS.green5, color: "#fff", boxShadow: `0 2px 8px ${COLORS.green5}40` },
+    primary: { background: "#111111", color: "#fff", boxShadow: `0 2px 8px ${COLORS.green5}40` },
     secondary: { background: COLORS.cream2, color: COLORS.deepGreen, border: `1px solid ${COLORS.green2}` },
     ghost: { background: "transparent", color: COLORS.green5, border: `1px solid ${COLORS.green3}` },
     danger: { background: "#C0392B", color: "#fff" },
@@ -246,7 +253,7 @@ const AuthPage = ({ onLogin }) => {
     }}>
       {/* Left panel */}
       <div style={{
-        flex: 1, background: `linear-gradient(160deg, ${COLORS.green5} 0%, ${COLORS.deepGreen} 100%)`,
+        flex: 1, background: `linear-gradient(160deg, #000000 0%, #2C2C2C 100%)`,
         display: "flex", flexDirection: "column", justifyContent: "center",
         padding: "60px", position: "relative", overflow: "hidden"
       }}>
@@ -381,8 +388,12 @@ const Sidebar = ({ user, activeTab, setActiveTab, onLogout }) => {
       {/* Logo */}
       <div style={{ padding: "24px 20px 20px", borderBottom: `1px solid ${COLORS.cream3}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div style={{ width: 34, height: 34, borderRadius: "10px", background: COLORS.green5, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ fontSize: "18px" }}>🌿</span>
+          <div style={{ width: 34, height: 34, borderRadius: "10px", background: "#111111", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <img 
+  src={logo}
+  alt="Mentee"
+  style={{ width: "20px", height: "20px" }}
+/>
           </div>
           <span className="serif" style={{ fontSize: "20px", color: COLORS.deepGreen, letterSpacing: "-0.5px" }}>MENTEE</span>
         </div>
